@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 
 //1 Есть массив на 100 элементов с разными цифрами.
@@ -201,16 +202,7 @@ namespace tryCatchHomework
         public bool MakeAnOrder()
         {
             for (int i = 0; i < waiter.dishes.Count; i++)
-            {
-                if (waiter.dishes[i].Quantity == 0)
-                {
-                    memory[i] = false;
-                }
-                else
-                {
-                    memory[i] = true;
-                }
-            }
+                memory[i] = (waiter.dishes[i].Quantity == 0) ? false : true;
             Random random = new Random();
             int index = 0;
             int counterFood = 0;
@@ -273,6 +265,12 @@ namespace tryCatchHomework
     {
         static void Main(string[] args)
         {
+            
+            Title = "tryCatch";
+            Console.SetWindowSize(50, 50);
+            Console.SetBufferSize(50, 50);
+            Console.SetWindowPosition(0, 0);
+
             ////////////// задание 1
             //int[] arrInt = new int[100];
             //Random random = new Random();
@@ -295,7 +293,6 @@ namespace tryCatchHomework
             //}
 
             ////////////////////// задание 2            
-
             Client client;
             for (int i = 0; i < 7; i++)
             {
